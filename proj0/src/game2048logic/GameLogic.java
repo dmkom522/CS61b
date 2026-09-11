@@ -21,12 +21,12 @@ public class GameLogic {
     public static int moveTileUpAsFarAsPossible(int[][] board, int r, int c, int minR) {
         // TODO: Fill this in in tasks 2, 3, 4
         int nowr = r;
-        while(nowr - 1 >= 0 && board[nowr - 1][c] == 0){
+        while(nowr > 0 && board[nowr - 1][c] == 0 && nowr > minR){
             board[nowr-1][c] = board[nowr][c];
             board[nowr][c] = 0;
             nowr = nowr - 1;
         }
-        if (nowr > 0 && board[nowr-1][c] == board[nowr][c]){
+        if (nowr > 0 && board[nowr-1][c] == board[nowr][c] && nowr > minR){
             board[nowr-1][c] = 2 * board[nowr][c];
             board[nowr][c] = 0;
             nowr -= 1;
@@ -44,6 +44,7 @@ public class GameLogic {
      */
     public static void tiltColumn(int[][] board, int c) {
         // TODO: fill this in in task 5
+
         return;
     }
 
