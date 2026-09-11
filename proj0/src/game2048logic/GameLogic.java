@@ -26,6 +26,12 @@ public class GameLogic {
             board[nowr][c] = 0;
             nowr = nowr - 1;
         }
+        if (nowr > 0 && board[nowr-1][c] == board[nowr][c]){
+            board[nowr-1][c] = 2 * board[nowr][c];
+            board[nowr][c] = 0;
+            nowr -= 1;
+            return 1 + nowr;
+        }
         return 0;
     }
 
