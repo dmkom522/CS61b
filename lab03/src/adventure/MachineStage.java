@@ -132,7 +132,7 @@ public class MachineStage implements AdventureStage {
         int i = 0;
         int sum = 0;
         while (i < x.length) {
-            sum = sum + mysteryAdd(sum, x[i]);
+            sum = sum + x[i];
             i = i + 1;
         }
         return sum;
@@ -146,6 +146,8 @@ public class MachineStage implements AdventureStage {
     public static int sumOfElementwiseMax(int[] a, int[] b) {
         int[] maxes = arrayMax(a, b);
         int sumofMaxes = arraySum(maxes);
+        int sum = arraySum(a) +arraySum(b);
+        sumofMaxes = sum -sumofMaxes;
         return sumofMaxes;
     }
 }
